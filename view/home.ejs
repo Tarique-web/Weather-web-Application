@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <title>Weather App</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="mid"  >
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href='#' >About Us</a></li>
+                <li><a href="#" >Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Right box for buttons -->
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Us</button>
+        </div>
+        <!-- location,Description,icon,temp,feels_like -->
+        <form class="CityName" action="/weather" method="POST">
+            <div class="item">
+                <label for="City" class="label">CityName:</label>
+                <input type="search" class="input" name="City" placeholder="CityName" required>
+            </div>
+            <div>
+                <button type="submit" class="btn">search</button>
+
+
+                <div class="result">
+                    <h2 class="text-light">wheather Information...</h1>
+
+                        <%if(currentDateTime!==null){%>
+                        <h2 class="time"><%=currentDateTime%></h3>
+                            <% } %>
+                            <% if(temp!== null)  {%>
+                            <h3 class="temp">Temprature: <%= temp%>&#8451;</h1>
+                                <% } %>
+                                <% if(feels_like !== null)  {%>
+                                <h3 class="feels_like">FeelsLike: <%= feels_like %>&#8451;</h2>
+                        <% } %>
+                        <div class="icon-des">
+                            <% if(icon !== null)  {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= icon %>.png" alt="">
+                            <% } %>
+                            <% if(Description !== null)  {%>
+                            <h3><%= Description %></h3>
+                            <% } %>
+                        </div>
+                        <% if(location !== null)  {%>
+                        <p class="city"><%= location %></p>
+                        <% } %>
+
+                </div>
+
+        </form>
+
+        </div>
+        <div class='container'>
+            <h1>Md.Tarique Anwar</h1>
+            <h2>Student At NavGurukul</h2>
+            <h3>Email: tarique19@navgurukul.org</h3>
+
+        </div>
+
+
+    </header>
+</body>
