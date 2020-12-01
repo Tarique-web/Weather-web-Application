@@ -21,6 +21,10 @@ app.set('views', path.join(__dirname, 'view'));
 app.get("/", (req, res) => {
     res.render('home')
 })
+app.get("/check",(req, res)=>{
+    res.send("welcome to waether check")
+    
+})
 
 app.use('/', router)
 require('./routes/weather')(router)
