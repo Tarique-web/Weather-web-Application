@@ -13,8 +13,14 @@ app.use(body.json())
 app.use(express.static('public'));
 app.use(body.urlencoded({ extended: true}));
 
+// -------------------------------
+// app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'view'));
+// ------------------------------------------------
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'view'));
+app.set('views', 'views');
+app.use(body.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 
