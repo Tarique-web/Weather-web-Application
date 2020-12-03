@@ -7,8 +7,11 @@ module.exports = (router) => {
         .post("/weather", (req, res) => {
 
             const cityName = req.body.City;
-            const API_Keys = process.env.API_KEYS
-            const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+//             const API_Keys = process.env.API_KEYS
+            const API_Keys = `5dc8713982027518a17480bc097982a1`
+//             const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+            const MAPBOX_TOKEN = `pk.eyJ1IjoidGFyaXF1ZTE0MyIsImEiOiJja2h5bjFjaHYwMnk1MnFqcWd0cjQ1aWs1In0.bVmeXkdIoVMVolk4YaPIGA
+SHA256:8tF0wX2WquK45aGKs/Bh1dKmBXH08vxUe0VCJJWOA/o.`
             const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${cityName}.json?&access_token=${MAPBOX_TOKEN}`
 
             request({ url, json: true }, (error, { body }) => {
