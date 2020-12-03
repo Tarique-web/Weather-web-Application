@@ -1,4 +1,5 @@
 const express = require('express');
+const ejs = require('ejs')
 require("dotenv").config()
 const body = require("body-parser");
 const path = require('path')
@@ -10,7 +11,6 @@ app.use(body.json())
 
 // Middleware
 
-app.use(express.static('public'));
 app.use(body.urlencoded({ extended: true}));
 
 // -------------------------------
